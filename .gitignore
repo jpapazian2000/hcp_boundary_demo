@@ -2,6 +2,7 @@
 *.tfvars
 *.tfstate
 *.tfstate.backup
-basic/.terraform
-azure/.terraform
-.DS_Store
+tfcb_workspace/.terraform
+tfcb_workspace/*.tfstate
+tfcb_workspace/*.tfstate.backup
+
