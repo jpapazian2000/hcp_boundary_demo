@@ -50,7 +50,6 @@ variable "pgsql_vault_name" {
 }
 variable "pgsql_vault_pwd" {
     description = "user pwd for vault to connect to the db"
-    default = "vault-password"
     sensitive = true
 }
 variable "pgsql_admin_user" {
@@ -59,7 +58,6 @@ variable "pgsql_admin_user" {
 }
 variable "pgsql_admin_pwd" {
     description = "pwd of the db"
-    default = "B0nd4R1"
     sensitive = true
 }
 variable "pgsql_db_name" {
@@ -73,4 +71,7 @@ variable "pgsql_server_name" {
 variable "region" {
     description = "HCP HVN Region"
     default = "eu-central-1"
+}
+variable "boundary_auth_method" {
+    description = "auth method for initial boundary connection"
 }

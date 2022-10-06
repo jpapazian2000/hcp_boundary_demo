@@ -39,8 +39,9 @@ resource "tfe_workspace" "build" {
     allow_destroy_plan = true
     global_remote_state = false
     remote_state_consumer_ids = [ tfe_workspace.conf.id ]
+    working_directory = "infra_build"
     vcs_repo {
-      identifier = "jpapazian2000/hcp-vault-boundary-infra"
+      identifier = "jpapazian2000/hcp_boundary_demo"
       oauth_token_id = tfe_oauth_client.creds.oauth_token_id
     }
 }
@@ -52,10 +53,11 @@ resource "tfe_workspace" "conf" {
     description = "workspace to configure the infra for the boundary demo"
     allow_destroy_plan = true
     global_remote_state = false
-    #vcs_repo {
-    #  identifier = "jpapazian2000/hcp-vault-boundary-infra"
-    #  oauth_token_id = tfe_oauth_client.creds.oauth_token_id
-    #}
+    working_directory = "infra_conf"
+    vcs_repo {
+      identifier = "jpapazian2000/hcp_boundary_demo"
+      oauth_token_id = tfe_oauth_client.creds.oauth_token_id
+    }
 }
 #association of variable sets
 resource  "tfe_workspace_variable_set" "aws_build" {
