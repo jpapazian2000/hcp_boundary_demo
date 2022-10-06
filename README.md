@@ -21,6 +21,7 @@ This example creates a simple Vault cluster and generates a Vault token in the `
 ## Pre-Requisites:
 - AWS Account Credentials with the proper permissions (not sure for the begining)
 - HCP Account Credentials with the proper permissions (CLIENT_ID and CLIENT_SECRET with contributor role)
+- Google Credentials
 - TFCB account
 
 ## DEMO STEPS
