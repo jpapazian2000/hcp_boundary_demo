@@ -100,6 +100,8 @@ In the meantime, here are the steps to get this value:
  ![picture](/images/hcp_boundary_demo_5.png)
  2. in the window that opens click in the `Manual` radio button and then `Next`
  ![picture](/images/hcp_boundary_demo_6.png)
+ 3. Click on the `Auth Methods` in the left menu, and from there copy the id of the `password` auth method
+ ![picture](/images/hcp_boundary_demo_7.png)
 
 ## HCP Vault Cluster - dev 
 
