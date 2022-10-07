@@ -90,7 +90,6 @@ I have **NOT** configured the workspace for `auto-apply`so at the end of the pla
 
 At the end you will get in your outputs all the information needed to configure the infra
 ![picture](/images/hcp_boundary_demo_4.png)
-![picture](/images/hcp_boundary_demo_5.png)  
 
 
 ## HCP Vault Cluster - dev 
