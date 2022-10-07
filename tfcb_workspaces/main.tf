@@ -1,5 +1,5 @@
 data "tfe_organization" "org" {
-  name = "jpapazian-org"
+  name = var.tfcb_org
 }
 data "tfe_variable_set" "aws" {
     name = var.aws_credentials
@@ -20,7 +20,7 @@ data "tfe_variable_set" "mandatory_tags" {
 
 resource "tfe_oauth_client" "creds" {
   name             = "jpapazian-oauth-client"
-  organization     = "jpapazian-org"
+  organization     = var.tfcb_org
   api_url          = "https://api.github.com"
   http_url         = "https://github.com"
   oauth_token      = var.vcs_token
@@ -40,6 +40,7 @@ resource "tfe_workspace" "build" {
     global_remote_state = false
     remote_state_consumer_ids = [ tfe_workspace.conf.id ]
     working_directory = "infra_build"
+    queue_all_runs = false
     vcs_repo {
       identifier = "jpapazian2000/hcp_boundary_demo"
       oauth_token_id = tfe_oauth_client.creds.oauth_token_id
@@ -54,6 +55,7 @@ resource "tfe_workspace" "conf" {
     allow_destroy_plan = true
     global_remote_state = false
     working_directory = "infra_conf"
+    queue_all_runs = false
     vcs_repo {
       identifier = "jpapazian2000/hcp_boundary_demo"
       oauth_token_id = tfe_oauth_client.creds.oauth_token_id
@@ -128,14 +130,14 @@ resource "tfe_variable" "ssh_allowed_ip" {
 resource "tfe_variable" "pgsql_vault_name" {
     key = "pgsql_vault_name"
     value = var.pgsql_vault_name
-    workspace_id = tfe_workspace.build.id
+    workspace_id = tfe_workspace.conf.id
     description = "user that vault will use to connect to the instance"
     category = "terraform"
 }
 resource "tfe_variable" "pgsql_vault_pwd" {
     key = "pgsql_vault_pwd"
     value = var.pgsql_vault_pwd
-    workspace_id = tfe_workspace.build.id
+    workspace_id = tfe_workspace.conf.id
     description = "pwd that vault will use to connect to the instance"
     category = "terraform"
     sensitive = true
@@ -153,6 +155,7 @@ resource "tfe_variable" "pgsql_admin_pwd" {
     workspace_id = tfe_workspace.build.id
     description = "pwd  of the admin db"
     category = "terraform"
+    sensitive = true
 }
 resource "tfe_variable" "pgsql_db_name" {
     key = "pgsql_db_name"
@@ -173,6 +176,13 @@ resource "tfe_variable" "region" {
     value = var.region
     workspace_id = tfe_workspace.build.id
     description = "HCP HVN Region for the vault/boundary infra"
+    category = "terraform"
+}
+resource "tfe_variable" "boundary_auth_method" {
+    key = "region"
+    value = var.boundary_auth_method
+    workspace_id = tfe_workspace.conf.id
+    description = "initial auth method for boundary"
     category = "terraform"
 }
 

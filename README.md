@@ -42,6 +42,7 @@ This repo is organised in 3 sub directories:
  - `google_credentials` : name of the tfcb variable set that defines all google credentials information
  - `hcp_credentials` : name of the tfcb variable set that defines all hcp credentials information
  - `Mandatory_Tags`: name of the tfcb variable set that defines all mandatory tags you want to apply to your resources in your cloud environments
+ - `tfcb_org`: is the organisation in which you want to create your workspaces
  - other variables names are indicating their purposes
  - export `tfe_token`and `vcs_token`as terraform env variables:
 ````
@@ -55,7 +56,21 @@ terraform plan -var-file=tfcb.tfvars
 terraform apply -var-file=tfcb.tfvars
 ````
 note that there are a couple of variables (mainly passwords) that need to be set up manually at that stage. I did not want to hard code them :-)
+````
+tfe_variable.google_subnet_prefix: Creation complete after 2s [id=var-N6NVJNTPSgZ3ueu2]
+tfe_workspace_variable_set.aws_build: Creation complete after 1s [id=ws-CvDAfkuDTH9PNYUE_varset-Eu9fwzc65S41bPEc]
+tfe_variable.ssh_allowed_ip: Creation complete after 2s [id=var-UZGQgj249bi9vRBF]
+tfe_variable.cluster: Creation complete after 2s [id=var-6MAdsFWWoymWrS4G]
+tfe_variable.boundary_pwd: Creation complete after 2s [id=var-mzkk9Z21482Sz6Hb]
+tfe_workspace_variable_set.hcp_build: Creation complete after 1s [id=ws-CvDAfkuDTH9PNYUE_varset-5FfTuLnBrf1QG56P]
+tfe_variable.pgsql_db_name: Creation complete after 2s [id=var-HBcLdyXhhRRdB6jM]
+tfe_variable.region: Creation complete after 2s [id=var-fjChpXRHcQq4vpJZ]
 
+Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
+````
+
+At the end of the apply you should get 2 workspaces in your org in Terraform Cloud for Business:
+ - `infra_build` and `infra_conf` as in the following ![picture](/images/hcp_boundary_demo_1.png)
 
 
 

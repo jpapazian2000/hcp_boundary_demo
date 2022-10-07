@@ -75,3 +75,7 @@ variable "region" {
 variable "boundary_auth_method" {
     description = "auth method for initial boundary connection"
 }
+variable "tfcb_org" {
+    description = "org in which to create the workspaces"
+    default = "jpapazian-org"
+}
