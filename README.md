@@ -103,7 +103,28 @@ In the meantime, here are the steps to get this value:
  3. Click on the `Auth Methods` in the left menu, and from there copy the id of the `password` auth method (starts with `ampw_`)
  ![picture](/images/hcp_boundary_demo_7.png)
  4. finally, copy this value in the variable `boundary_auth_method` of the `hcp_vault_boundary_conf` workspace  
- 
+ 5. Once this is done, you can go in the `Actions` menu, and `Start new run`
+ 6. At the end of the configuration (which should be quite fast) you get the following output
+ ![picture](/images/hcp_boundary_demo_8.png)
+ **Vault** is configured as follow:
+  - a namespace named `databases`
+  - a `postgres` secret engine
+  - a `northwind` connection 
+  - 2 roles: `dba` and `analyst` 
+**Boundary** is configured as follow: 
+  - `Global` Org
+  - `Database` Org
+  - `Database Access` Project
+  - in this project, host catalog is `db_catalog` 
+  - in the `db_catalog`, host_set (not named), and in this host_set, there is the `northwind` host (static host)
+  - credential store is `vault_store` which connects to vault and from there we have 2 librairies:
+    - `vault_analyst_libray`: generate credentials for the analyst role
+    - `vault_dba_library`: generate credentials for the dba role
+
+
+   
+
+
 
 ## HCP Vault Cluster - dev 
 
