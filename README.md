@@ -45,9 +45,17 @@ This repo is organised in 3 sub directories:
  - other variables names are indicating their purposes
  - export `tfe_token`and `vcs_token`as terraform env variables:
 ````
-&nbsp;&nbspexport TFE_TOKEN=${tfe_token}
-&nbsp;&nbspexport TF_VAR_vcs_token=${vcs_token}
+export TF_VAR_tfe_token=${tfe_token}
+export TF_VAR_vcs_token=${vcs_token}
 ````
+Then you can get into the usual `plan`& `apply` workflow:
+````
+terraform init
+terraform plan -var-file=tfcb.tfvars
+terraform apply -var-file=tfcb.tfvars
+````
+note that there are a couple of variables (mainly passwords) that need to be set up manually at that stage. I did not want to hard code them :-)
+
 
 
 
