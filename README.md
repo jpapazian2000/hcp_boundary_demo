@@ -1,3 +1,10 @@
+# STRUCTURE OF THIS README
+The organisation of this readme is the following:
+ - Goal of the deme
+ - repo architecture
+ - deployment guide
+ - demo
+
 # GOAL OF THIS DEMO
 The intent of the following scripts is ultimatelly to showcase the ease of installation, configuration and usage of HCP Boundary.
 To do so, the following will be created:
@@ -6,6 +13,20 @@ To do so, the following will be created:
  - 1 Postgresql db on GCP with 2 roles (dba and analyst)
  Next the dynamic secrets management from the postgresql db will be all configured in the Vault Cluster
  Finally we will integrate the Vault and Boundary clusters and demo how a user requesting access to the postgresql db gets the dynamic credential from Vault.
+
+
+# Repo Architecture
+This repo is organised in 3 sub directories:
+ - infra_build
+ All code needed to build the underlying infrastructure for the demo
+ - infra_conf
+ All code needed to configure the infrastructure for the demo
+ - tfcb_workspaces
+ The above 2 directories will be linked to Terraform Cloud for Business Workspaces.
+ In order to speed up the deployement, this subdirectory will automate the deployment, configuration and variable setting of those workspaces in TFCB
+
+
+# Deployement Guide
 
 ## HCP Vault Cluster - dev 
 
