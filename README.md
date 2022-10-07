@@ -31,8 +31,8 @@ This repo is organised in 3 sub directories:
 - AWS Account Credentials with the proper permissions (not sure for the begining)
 - HCP Account Credentials with the proper permissions (CLIENT_ID and CLIENT_SECRET with contributor role)
 - Google Credentials
-- TFCB token with privileges in your organisation : `tfe_token`
-- github oauth token :`vcs_token` (for github starts with `ghp_xxx`)
+- TFCB token with privileges in your organisation : `tfe_token` variable
+- github oauth token :`vcs_token` variable (for github starts with `ghp_xxx`)
   - Follow this [link](https://www.terraform.io/docs/cloud/api/oauth-clients.html?&_ga=2.231907487.1225499417.1664975183-1693872711.1655195363#create-an-oauth-client) for more details on getting this token.
 ## Deployment
 1. fork and clone the repo
@@ -43,6 +43,10 @@ This repo is organised in 3 sub directories:
  - `hcp_credentials` : name of the tfcb variable set that defines all hcp credentials information
  - `Mandatory_Tags`: name of the tfcb variable set that defines all mandatory tags you want to apply to your resources in your cloud environments
  - other variables names are indicating their purposes
+ - export `tfe_token`and `vcs_token`as terraform env variables:
+ > export TFE_TOKEN=${tfe_token}
+ 
+
 
 ## HCP Vault Cluster - dev 
 
