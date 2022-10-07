@@ -15,7 +15,7 @@ To do so, the following will be created:
  Finally we will integrate the Vault and Boundary clusters and demo how a user requesting access to the postgresql db gets the dynamic credential from Vault.
 
 
-# Repo Architecture
+# REPO ARCHITECTURE
 This repo is organised in 3 sub directories:
  - infra_build
  All code needed to build the underlying infrastructure for the demo
@@ -26,7 +26,10 @@ This repo is organised in 3 sub directories:
  In order to speed up the deployement, this subdirectory will automate the deployment, configuration and variable setting of those workspaces in TFCB
 
 
-# Deployement Guide
+# DEPLOYEMENT GUIDE
+1 fork and clone the repo
+2 cd to tfcb_workspaces
+3 check your variables:
 
 ## HCP Vault Cluster - dev 
 
