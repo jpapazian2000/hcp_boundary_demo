@@ -82,6 +82,16 @@ On the top right part of the window in the `overview` menu, select `action` and 
 In the window that opens, add your comment and click on `Start run` 
 ![picture](/images/hcp_boundary_demo_3.png)  
 
+***Important Notes***
+also we're provisionning a database in gcp, a vault and boundary clusters in HCP, the whole process can take up to 15mn (mainly due to vault)
+Be patient!
+
+I have **NOT** configured the workspace for `auto-apply`so at the end of the plan phase, you will have to manually `apply` 
+
+At the end you will get in your outputs all the information needed to configure the infra
+![picture](/images/hcp_boundary_demo_4.png)
+![picture](/images/hcp_boundary_demo_5.png)  
+
 
 ## HCP Vault Cluster - dev 
 
