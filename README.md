@@ -91,6 +91,13 @@ I have **NOT** configured the workspace for `auto-apply`so at the end of the pla
 At the end you will get in your outputs all the information needed to configure the infra
 ![picture](/images/hcp_boundary_demo_4.png)
 
+## Configuration of the Infra
+Basically, there's just an `apply`to hit on the other workspace...
+But before that, we need to manually grab a data on boundary: the initial `authentication method id`
+This attribute is currently not exported as part of the boundary cluster creation. A request was done for this.
+In the meantime, here are the steps to get this value:
+1. connect to the boundary interface (the url was provided in the outputs above). Fill the required admin username and passwords with the values you specified in the variables
+ ![picture](/images/hcp_boundary_demo_5.png)
 
 ## HCP Vault Cluster - dev 
 
