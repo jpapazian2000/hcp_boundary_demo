@@ -44,8 +44,12 @@ This repo is organised in 3 sub directories:
  - `Mandatory_Tags`: name of the tfcb variable set that defines all mandatory tags you want to apply to your resources in your cloud environments
  - other variables names are indicating their purposes
  - export `tfe_token`and `vcs_token`as terraform env variables:
- > export TFE_TOKEN=${tfe_token}
- 
+ ````
+export TFE_TOKEN=${tfe_token}
+export TF_VAR_vcs_token=${vcs_token}
+````
+
+
 
 
 ## HCP Vault Cluster - dev 
