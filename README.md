@@ -27,9 +27,14 @@ This repo is organised in 3 sub directories:
 
 
 # DEPLOYEMENT GUIDE
-1 fork and clone the repo
-2 cd to tfcb_workspaces
-3 check your variables:
+1. fork and clone the repo
+2. cd to `tfcb_workspaces`
+3. check your variables in `tfcb.tfvars`
+ - `aws_credentials` : name of the tfcb variable set that defines all aws credentials information
+ - `google_credentials` : name of the tfcb variable set that defines all google credentials information
+ - `hcp_credentials` : name of the tfcb variable set that defines all hcp credentials information
+ - `Mandatory_Tags`: name of the tfcb variable set that defines all mandatory tags you want to apply to your resources in your cloud environments
+ - other variables names are indicating their purposes
 
 ## HCP Vault Cluster - dev 
 
