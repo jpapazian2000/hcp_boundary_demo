@@ -98,6 +98,8 @@ This attribute is currently not exported as part of the boundary cluster creatio
 In the meantime, here are the steps to get this value:
 1. connect to the boundary interface (the url was provided in the outputs above). Fill the required admin username and passwords with the values you specified in the variables
  ![picture](/images/hcp_boundary_demo_5.png)
+ 2. in the window that opens click in the `Manual` radio button and then `Next`
+ ![picture](/images/hcp_boundary_demo_6.png)
 
 ## HCP Vault Cluster - dev 
 
