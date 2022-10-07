@@ -27,6 +27,13 @@ This repo is organised in 3 sub directories:
 
 
 # DEPLOYEMENT GUIDE
+## Pre-Requisites:
+- AWS Account Credentials with the proper permissions (not sure for the begining)
+- HCP Account Credentials with the proper permissions (CLIENT_ID and CLIENT_SECRET with contributor role)
+- Google Credentials
+- TFCB token with privileges in your organisation : `tfe_token`
+- github oauth token :`vcs_token` (for github starts with `ghp_xxx`)
+Follow this [link](https://www.terraform.io/docs/cloud/api/oauth-clients.html?&_ga=2.231907487.1225499417.1664975183-1693872711.1655195363#create-an-oauth-client) for more details on getting this token.
 1. fork and clone the repo
 2. cd to `tfcb_workspaces`
 3. check your variables in `tfcb.tfvars`
@@ -47,11 +54,6 @@ The Configuration in this directroy will create the following objects:
 
 This example creates a simple Vault cluster and generates a Vault token in the `admin` namespace and outputs it for use. Please note that this cluster is exposed to the internet
 
-## Pre-Requisites:
-- AWS Account Credentials with the proper permissions (not sure for the begining)
-- HCP Account Credentials with the proper permissions (CLIENT_ID and CLIENT_SECRET with contributor role)
-- Google Credentials
-- TFCB account
 
 ## DEMO STEPS
  # copy the github repo
