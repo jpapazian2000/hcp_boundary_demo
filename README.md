@@ -70,7 +70,7 @@ Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
 ````
 
 At the end of the apply you should get 2 workspaces in your org in Terraform Cloud for Business:
- - `infra_build` and `infra_conf` as in the following ![picture](./images/hcp_boundary_demo_1.png)
+ - `infra_build` and `infra_conf` as in the following ![picture](/hcp_boundary_demo/images/hcp_boundary_demo_1.png)
 
 
 
