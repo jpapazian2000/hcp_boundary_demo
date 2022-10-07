@@ -41,6 +41,7 @@ resource "tfe_workspace" "build" {
     remote_state_consumer_ids = [ tfe_workspace.conf.id ]
     working_directory = "infra_build"
     queue_all_runs = false
+    trigger_prefixes = ["/infra_build/*"]
     vcs_repo {
       identifier = "jpapazian2000/hcp_boundary_demo"
       oauth_token_id = tfe_oauth_client.creds.oauth_token_id
@@ -56,6 +57,7 @@ resource "tfe_workspace" "conf" {
     global_remote_state = false
     working_directory = "infra_conf"
     queue_all_runs = false
+    trigger_prefixes = ["/infra_conf/*"]
     vcs_repo {
       identifier = "jpapazian2000/hcp_boundary_demo"
       oauth_token_id = tfe_oauth_client.creds.oauth_token_id
