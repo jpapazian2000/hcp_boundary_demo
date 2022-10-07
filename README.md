@@ -34,7 +34,7 @@ This repo is organised in 3 sub directories:
 - TFCB token with privileges in your organisation : `tfe_token` variable
 - github oauth token :`vcs_token` variable (for github starts with `ghp_xxx`)
   - Follow this [link](https://www.terraform.io/docs/cloud/api/oauth-clients.html?&_ga=2.231907487.1225499417.1664975183-1693872711.1655195363#create-an-oauth-client) for more details on getting this token.
-## Deployment
+## Creation of the TFCB Workspaces
 1. fork and clone the repo
 2. cd to `tfcb_workspaces`
 3. check your variables in `tfcb.tfvars`
@@ -56,6 +56,7 @@ terraform plan -var-file=tfcb.tfvars
 terraform apply -var-file=tfcb.tfvars
 ````
 note that there are a couple of variables (mainly passwords) that need to be set up manually at that stage. I did not want to hard code them :-)
+below is an extract of the end of the provisionning
 ````
 tfe_variable.google_subnet_prefix: Creation complete after 2s [id=var-N6NVJNTPSgZ3ueu2]
 tfe_workspace_variable_set.aws_build: Creation complete after 1s [id=ws-CvDAfkuDTH9PNYUE_varset-Eu9fwzc65S41bPEc]
@@ -70,9 +71,16 @@ Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
 ````
 
 At the end of the apply you should get 2 workspaces in your org in Terraform Cloud for Business:
- - `infra_build` and `infra_conf` as in the following ![picture](/images/hcp_boundary_demo_1.png)
+ - `hcp_vault_boundary_infra` and `hcp_vault_boundary__conf` as in the following ![picture](/images/hcp_boundary_demo_1.png)
+ I would recommend checking that all variables are correctly set and that you also have appropriate tags
 
 
+## Provisioning of the Infra
+To start, select your `hcp_vault_boundary_infra` workspace.
+On the top right part of the window in the `overview` menu, select `action` and then `start new run` 
+![picture](/images/hcp_boundary_demo_2.png)
+In the window that opens, add your comment and click on `Start run` 
+![picture](/images/hcp_boundary_demo_3.png)  
 
 
 ## HCP Vault Cluster - dev 
