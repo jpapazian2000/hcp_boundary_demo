@@ -26,13 +26,13 @@ variable "pgsql_admin_user" {
   description = "admin user to connect to the instance"
 }
 
-variable "pgsql_vault_name" {
-  description = "user for configuring pgsql"
-}
+#variable "pgsql_vault_name" {
+  #description = "user for configuring pgsql"
+#}
 
-variable "pgsql_vault_pwd" {
-  description = "passford for user for configuring pgsql"
-}
+#variable "pgsql_vault_pwd" {
+  #description = "passford for user for configuring pgsql"
+#}
 #Cloud Mandatory Tags
 variable "purpose" {
   description = "goal of this code"

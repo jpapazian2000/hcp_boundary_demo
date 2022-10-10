@@ -1,10 +1,10 @@
 variable "build_workspace_name" {
     description = "name of the build workspace"
-    default = "hcp-vault-boundary-infra2"
+    default = "hcp-vault-boundary-infra"
 }
 variable "conf_workspace_name" {
     description = "name of the build workspace"
-    default = "hcp-vault-boundary-conf2"
+    default = "hcp-vault-boundary-conf"
 }
 variable "vcs_token" {
     description = "oauth token for vcs connection"
@@ -16,15 +16,19 @@ variable "tfe_token" {
 }
 variable "aws_credentials" {
     description = "name of the existing variable set for aws credentials"
+    default = "aws_credentials"
 }
 variable "google_credentials" {
     description = "name of the existing variable set for google credentials"
+    default = "google_credentials"
 }
 variable "hcp_credentials" {
     description = "name of the existing variable set for hcp credentials"
+    default = "hcp_credentials"
 }
 variable "mandatory_tags" {
     description = "name of the existing variable set for mandatory tags to apply to all resources"
+    default = "Mandatory_Tags"
 }
 variable "boundary_pwd" {
     description = "admin pwd of boundary"
