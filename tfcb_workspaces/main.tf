@@ -181,7 +181,7 @@ resource "tfe_variable" "region" {
     category = "terraform"
 }
 resource "tfe_variable" "boundary_auth_method" {
-    key = "region"
+    key = "boundary_auth_method"
     value = var.boundary_auth_method
     workspace_id = tfe_workspace.conf.id
     description = "initial auth method for boundary"
